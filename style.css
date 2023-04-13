@@ -1,0 +1,101 @@
+* { 
+    border: 0; 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root { 
+    --bg: #ebeaf0;
+    --main-color: #17181c;
+    --switch-btn-bg: linear-gradient(110deg, #2fc4e9, #cBc02b, #ee4517);
+    --circle-btn-bg: #ebeaf0; 
+    --trans-timing: cubic-bezier(0.74, 0.05, 0.24, 0.93);
+}
+
+.dark:root { 
+    --bg: #17181c;
+    --main-color: #ebeaf0;
+    --switch-btn-bg: linear-gradient(110deg, #542fe9, #cB2bc4, #ff0606);
+    --circle-btn-bg: #17181c; 
+}
+
+body {
+    background-color: var(--bg);
+    height: 100vh;
+    transition: background-color .3s escape, color .3s escape;
+}
+
+.header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.content { 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-size: 30px;
+    color: var(--main-color);
+    transition: all .3s;
+    font-family: Arial;
+}
+
+.switch-btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 60px;
+    background-image: var(--switch-btn-bg);
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.icon {
+    position: absolute;
+    color: #fff;
+    font-size: 38px;
+    transition: left .5s var(--trans-timing), 
+    opacity .5s var(--trans-timing);
+}
+
+.dark-icon {
+    opacity: 0;
+    left: 70px;
+}
+
+.dark .dark-icon{
+    opacity: 1;
+    left: 10px;
+}
+
+.light-icon { 
+    opacity: 1;
+    left: 80px;   
+}
+
+.dark .light-icon { 
+    opacity: 0;
+    left: 80px;   
+}
+   
+.circle-btn{
+    position: absolute;
+    height: 46px;
+    width: 46px;
+    background-color: var(--circle-btn-bg);
+    border-radius: 50%;
+    left: 6px;
+    transition: left .5s var(--trans-timing);
+}
+
+.dark .circle-btn{
+    left: 68px;
+}
